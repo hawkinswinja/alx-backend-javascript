@@ -1,17 +1,16 @@
 const sendPaymentRequestToApi = require('./3-payment');
-const utils = require('./utils');
+const Utils = require('./utils');
 const sinon = require('sinon');
 const expect = require('chai').expect;
 
 describe('sendPaymentRequestToApi', function () {
-  const object =  new utils();
-  const spy = sinon.spy(object, 'calculateNumber');
+  const spy = sinon.spy(Utils, 'calculateNumber');
   sendPaymentRequestToApi(100, 20);
   it('validate the Util module is used', function () {
-    expect(spy.called);
+    expect(spy.called).to.be.true;
   });
   it('verify Util.calculateNumber is used', function () {
-    expect(spy.withArgs('SUM', 100, 20).called);
+    expect(spy.withArgs('SUM', 100, 20).called).to.be.true;
   });
   spy.restore();
 });
