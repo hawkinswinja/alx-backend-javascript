@@ -10,7 +10,7 @@ describe('sendPaymentRequestToApi', function () {
     expect(spy.called).to.be.true;
   });
   it('verify Util.calculateNumber is used', function () {
-    expect(spy.withArgs('SUM', 100, 20).called).to.be.true;
+    expect(spy.calledWith('SUM', 100, 20)).to.be.true;
   });
   spy.restore();
 });
