@@ -1,2 +1,2 @@
-const app = require('./6-http_express');
-app.listen(3000);
+const data = require('./read_file');
+console.log(Promise.resolve(data));
