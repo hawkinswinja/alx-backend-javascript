@@ -17,8 +17,8 @@ module.exports = function countStudents(path) {
           }
         }
         console.log(`Number of students: ${students.length}`);
-        console.log(`Number of students in CS: ${studentsCs.length}. List:`, studentsCs.join(', '));
-        console.log(`Number of students in SWE: ${studentsSw.length}. List:`, studentsSw.join(', '));
+        console.log(`Number of students in CS: ${studentsCs.length}. List: ${studentsCs.join(', ')}`);
+        console.log(`Number of students in SWE: ${studentsSw.length}. List: ${studentsSw.join(', ')}`);
         resolve(true);
       }
     });
