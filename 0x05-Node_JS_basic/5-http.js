@@ -10,11 +10,12 @@ const app = http.createServer((req, res) => {
       res.end('Hello Holberton School!');
       break;
     case '/students':
-      res.writeHead(200);
       data.then((val) => {
+        res.writeHead(200);
         res.end(`This is the list of our students\n${val.join('\n')}`);
       }).catch(() => {
-        res.end('Error: Cannot load the database');
+        res.writeHead(500);
+        res.end('This is the list of our students\nError: Cannot load the database');
       });
       break;
     default:
