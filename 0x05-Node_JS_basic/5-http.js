@@ -14,7 +14,7 @@ const app = http.createServer((req, res) => {
       data.then((val) => {
         res.end(`This is the list of our students\n${val.join('\n')}`);
       }).catch(() => {
-        res.end('This is the list of our students\nError: Cannot load the database');
+        res.end('Error: Cannot load the database');
       });
       break;
     default:
