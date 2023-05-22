@@ -10,7 +10,8 @@ app.get('/students', (req, res) => {
     res.end(`This is the list of our students\n${val.join('\n')}`);
   }).catch(() => {
     res.writeHead(500);
-    res.end('This is the list of our students\nError: Cannot load the database');
+    res.end(`This is the list of our students
+Cannot load the database`);
   });
 });
 app.listen(1245, () => {});

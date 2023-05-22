@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 export default function readDatabase(path) {
   return new Promise((resolve, reject) => {
@@ -11,13 +11,13 @@ export default function readDatabase(path) {
         for (const row of students) {
           const student = row.split(',');
           if (student.includes('CS')) {
-            fieldList['CS'].push(student[0]);
+            fieldList.CS.push(student[0]);
           } else {
-            fieldList['SWE'].push(student[0]);
+            fieldList.SWE.push(student[0]);
           }
         }
         resolve(fieldList);
       }
     });
   });
-};
+}

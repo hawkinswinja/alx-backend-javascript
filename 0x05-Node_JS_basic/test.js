@@ -1,2 +1,2 @@
-const data = require('./read_file');
-console.log(Promise.resolve(data));
+import app from './server.js'
+app.listen(3000, () => {});
