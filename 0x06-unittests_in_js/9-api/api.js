@@ -1,12 +1,16 @@
 const app = require('express')();
 
 app.get('/', (req, res) => {
-  res.end('Welcome to the payment system');
+  res.send('Welcome to the payment system');
 });
 
 app.get('/cart/:id', (req, res) => {
-  if (req.params.id !== /\d+/) res.status(404);
-  res.end('Welcome to the payment system');
+  const id = Number(req.params.id);
+  if (!Number.isNaN(id)) { 
+    res.send(`Payment methods for cart ${id}`);
+  } else {
+    res.status(404);
+  }
 });
 
 app.listen(7865, () => {
